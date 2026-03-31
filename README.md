@@ -258,6 +258,10 @@ For detailed installation instructions for different GPU generations:
 
 ## 🎯 Usage
 
+### Python API (Simplified)
+For programmatic access without Gradio, use the new simplified API:
+- **[Wan2GP API Guide](docs/API_USAGE.md)** - How to use the simplified Python API for Flux and LTX generation.
+
 ### Basic Usage
 - **[Getting Started Guide](docs/GETTING_STARTED.md)** - First steps and basic usage
 - **[Models Overview](docs/MODELS.md)** - Available models and their capabilities
