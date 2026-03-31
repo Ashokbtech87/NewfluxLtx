@@ -120,7 +120,11 @@ class Wan2GPAPI:
 
     def _generate(self, **kwargs):
         model_type = kwargs.get("model_type")
-        params = wgp.get_default_settings(model_type).copy()
+        # Start with global defaults from models/_settings.json to avoid KeyErrors
+        params = wgp.primary_settings.copy()
+        # Merge model-specific defaults
+        params.update(wgp.get_default_settings(model_type))
+        # Merge user-provided parameters
         params.update(kwargs)
         params["state"] = self.state
         
