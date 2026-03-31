@@ -258,9 +258,9 @@ For detailed installation instructions for different GPU generations:
 
 ## 🎯 Usage
 
-### Python API (Simplified)
-For programmatic access without Gradio, use the new simplified API:
-- **[Wan2GP API Guide](docs/API_USAGE.md)** - How to use the simplified Python API for Flux and LTX generation.
+### Python API & Colab
+For programmatic access without Gradio or across networks (e.g., from Colab to Local PC), use the simplified API:
+- **[Wan2GP Headless API Guide](docs/API_USAGE.md)** - How to use the Python API, setup `wan2gp_server.py`, and use `client_example.py` for remote Base64 execution.
 
 ### Basic Usage
 - **[Getting Started Guide](docs/GETTING_STARTED.md)** - First steps and basic usage

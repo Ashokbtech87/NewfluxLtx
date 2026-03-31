@@ -53,5 +53,23 @@ video_path = api.generate_video(
 - `video_length`: Total frames (e.g., 81 for ~3.4s at 24fps).
 - `seed`: Random seed.
 
+## Remote execution from Colab to Local PC
+If Wan2GP is running on Google Colab and you want to trigger image/video generation from your local PC using Python scripts, you can use the built-in FastAPI server.
+
+**1. Start the Server (in Colab):**
+```bash
+python wan2gp_server.py
+```
+*Note: To expose the server to the public internet so your PC can reach it, use `localtunnel`:*
+```bash
+!npm install -g localtunnel
+!npx localtunnel --port 8000
+```
+This will give you a public URL (e.g. `https://my-colab-url.loca.lt`).
+
+**2. Call the API from your Local PC:**
+See `client_example.py` for a full working script. The API returns the generated images and videos encoded as **Base64** strings, so your local script can download and save them directly without any complex file server setups!
+
 ## Examples
-See **[test_wan2gp_api.py](../test_wan2gp_api.py)** for a complete working example of a story-to-video pipeline.
+- **Local Python Script**: See `client_example.py` to learn how to hit the remote API and decode Base64 video responses.
+- **Direct Python Import**: See `test_wan2gp_api.py` for a complete working example of a story-to-video pipeline executing directly.
